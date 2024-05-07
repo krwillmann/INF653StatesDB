@@ -1,3 +1,4 @@
+
 const corsOptions = {
      origin: (origin, callback) => {
          if (whitelist.indexOf(origin) !== -1 || !origin) {
