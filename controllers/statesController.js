@@ -177,7 +177,7 @@ const addFunFacts = async (req, res) => {
 
         // if state doesn't exist in collection, create a new one
         if (!stateData) {
-            stateData = new States( {stateCode: state.toUpperCase(), funFacts: [] });
+            stateData = new States( {stateCode: state.toUpperCase(), funfacts: [] });
         }
 
         // add funfacts data to array
