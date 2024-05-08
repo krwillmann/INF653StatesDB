@@ -3,17 +3,14 @@ const data = {
 }
 const States = require('../model/States');
 
-// GET FUNCTIONS
-
 // Get All States Data
-// Also handles contig query
 const getAllStates = async (req, res) => {
     const { contig } = req.query;
     try {
-        // Retrieve all state data from the JSON file
+        // Retrieve state data from JSON file
         const jsonStatesData = data.states;
 
-        // Retrieve state data (including funfacts) from MongoDB collection
+        // Retrieve state data from MongoDB collection
         const mongodbStatesData = await States.find();
 
         // Combine the data from both sources into a single array
@@ -51,10 +48,10 @@ const getAllStates = async (req, res) => {
 const getOneState = async (req, res) => {
     const { state } = req.params;
     try {
-        // Retrieve all state data from the JSON file
+        // Retrieve state data from the JSON file
         const jsonStatesData = data.states;
 
-        // Retrieve state data (including funfacts) from MongoDB collection
+        // Retrieve state data from MongoDB collection
         const mongodbStatesData = await States.find();
 
         // Combine the data from both sources into a single array
@@ -84,7 +81,7 @@ const getFunFact = async (req, res) => {
     const { state } = req.params;
 
     try {
-        // Retrieve all states data from MongoDB collection
+        // Retrieve states data from MongoDB collection
         let mongodbStatesData = await States.find();
 
         // Remove all states but state param state
